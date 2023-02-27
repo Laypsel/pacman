@@ -1,0 +1,187 @@
+body {
+    background-color: black;
+}
+
+.gamefield {
+    position: relative;
+    height: 100vh;
+}
+
+.pacman {
+    width: 100px;
+    height: 100px;
+    background: yellow;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 10;
+    clip-path: polygon(100% 75%, 50% 50%, 100% 25%, 100% 0, 0 0, 0 100%, 100% 100%);
+    animation: eat 0.5s linear infinite alternate, move 20s linear infinite normal;
+}
+
+.food {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    top: calc(10% - 8px);
+    left: calc(20% - 8px);
+    animation: vanish 20s linear infinite normal;
+}
+
+.food1 {
+    top: calc(10% - 8px);
+    left: calc(30%);
+    animation-delay: 1.33s; 
+}
+
+.food2 {
+    top: calc(10% - 8px);
+    left: calc(40%);
+    animation-delay: 2.66s; 
+}
+
+.food3 {
+    top: calc(10% - 8px);
+    left: calc(50%);
+    animation-delay: 3.99s;
+}
+
+.food4 {
+    top: calc(10% - 8px);
+    left: calc(60%);
+    animation-delay: 5.12s;
+}
+
+.food5 {
+    top: calc(30% - 8px);
+    left: calc(60%);
+    animation-delay: 6.25s;
+}
+
+.food6 {
+    top: calc(50% - 8px);
+    left: calc(60%);
+    animation-delay: 7.58s;
+}
+
+.food7 {
+    top: calc(70% - 8px);
+    left: calc(60%);
+    animation-delay: 9s;
+}
+
+.food8 {
+    top: calc(90% - 8px);
+    left: calc(60%);
+    animation-delay: 10.32s;
+}
+
+.food9 {
+    top: calc(90% - 8px);
+    left: calc(50%);
+    animation-delay: 11.32s;
+}
+
+.food10 {
+    top: calc(90% - 8px);
+    left: calc(40%);
+    animation-delay: 12.54s;
+}
+
+.food11 {
+    top: calc(90% - 8px);
+    left: calc(30%);
+    animation-delay: 14s;
+}
+
+.food12 {
+    top: calc(90% - 8px);
+    left: calc(20% - 8px);
+    animation-delay: 15.26s;
+}
+
+.food13 {
+    top: calc(70% - 8px);
+    left: calc(20% - 8px);
+    animation-delay: 16.29s;
+}
+
+.food14 {
+    top: calc(50% - 8px);
+    left: calc(20% - 8px);
+    animation-delay: 17.62s;
+}
+
+.food15 {
+    top: calc(30% - 8px); 
+    left: calc(20% - 8px);
+    animation-delay: 18.95s;
+}
+
+@keyframes eat {
+    0%, 100% {
+        clip-path: polygon(100% 75%, 50% 50%, 100% 25%, 100% 0, 0 0, 0 100%, 100% 100%);
+    }
+
+    50% {
+        clip-path: polygon(100% 50%, 50% 50%, 100% 50%, 100% 0, 0 0, 0 100%, 100% 100%);
+    }
+}
+
+@keyframes move {
+    0% {
+        top: calc(10% - 50px);
+        left: calc(20% - 50px);
+    }
+
+    24% {
+        transform: rotate(0);
+    }
+
+    25% {
+        top: calc(10% - 50px);
+        left: calc(60% - 42px);
+        transform: rotate(90deg);
+    }
+
+    49% {
+        transform: rotate(90deg);
+    }
+
+    50% {
+        top: calc(90% - 50px);
+        left: calc(60% - 42px);
+        transform: rotate(180deg);
+    }
+
+    74% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        top: calc(90% - 50px);
+        left: calc(20% - 50px);
+        transform: rotate(270deg);
+    }
+
+    99% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        top: calc(10% - 50px);
+        left: calc(20% - 50px);
+        transform: rotate(360deg);
+    }
+}
+
+ @keyframes vanish { 
+    0%, 50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
